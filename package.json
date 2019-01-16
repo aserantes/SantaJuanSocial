@@ -1,0 +1,25 @@
+{
+  "name": "santajuanasocial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run bs",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bs": "browser-sync start --server --files \"**/*\""
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aserantes/SantaJuanSocial.git"
+  },
+  "author": "Alejandro Serantes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aserantes/SantaJuanSocial/issues"
+  },
+  "homepage": "https://github.com/aserantes/SantaJuanSocial#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3"
+  }
+}
