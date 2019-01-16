@@ -7,7 +7,6 @@
     "start": "npm run bs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bs": "browser-sync start --server --files \"**/*\""
-
   },
   "repository": {
     "type": "git",
@@ -21,5 +20,10 @@
   "homepage": "https://github.com/aserantes/SantaJuanSocial#readme",
   "devDependencies": {
     "browser-sync": "^2.26.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6"
   }
 }
