@@ -1,12 +1,22 @@
 {
   "name": "santajuanasocial",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project Capstone",
   "main": "index.html",
   "scripts": {
-    "start": "npm run bs",
+    "start": "npm run watch:all",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bs": "browser-sync start --server --files \"**/*\""
+    "bs": "browser-sync start --server --files \"**/*\"",
+    "scss": "node-sass -o css/ css/",
+    "autoprefixer": "npx postcss css/*.css --use autoprefixer --replace",
+    "cssproc": "npm-run-all --sequential scss autoprefixer",
+    "watch:scss": "onchange \"css/*.scss\" -- npm run cssproc",
+    "watch:all": "npm-run-all --parallel watch:scss bs",
+    "clean": "rimraf dist && mkdirp dist/fonts && mkdirp dist/js && mkdirp dist/img && mkdirp dist/css",
+    "copyfonts": "mkdirp dist/fonts && ncp node_modules/font-awesome/fonts dist/fonts && ncp fonts dist/fonts",
+    "imgmin": "imagemin img/* --out-dir dist/img",
+    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html",
+    "build": "npm run clean && npm run imgmin && npm run copyfonts && npm run usemin"
   },
   "repository": {
     "type": "git",
@@ -19,10 +29,23 @@
   },
   "homepage": "https://github.com/aserantes/SantaJuanSocial#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.3"
+    "autoprefixer": "^9.4.5",
+    "browser-sync": "^2.26.3",
+    "cssmin": "^0.4.3",
+    "htmlmin": "0.0.7",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0",
+    "postcss-cli": "^6.1.1",
+    "rimraf": "^2.6.3",
+    "uglify-js": "^3.4.9",
+    "usemin-cli": "^0.5.1"
   },
   "dependencies": {
     "bootstrap": "^4.2.1",
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6"
   }

@@ -1,0 +1,204 @@
+/////////////////////////////////////////////// Google Fonts ///////////////////////////////////////////////
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:600|Open+Sans');
+
+/////////////////////////////////////////////// Variables ///////////////////////////////////////////////
+$josefin: "Josefin Sans",
+serif;
+$open-sans: "Open Sans",
+sans-serif;
+
+$azul: #005993;
+$verde: #20872C;
+$blanco: #FFF;
+$gris: #D2CBCB;
+$rojo: #DB5461;
+$radio: width / 20;
+
+/////////////////////////////////////////////// Rules ///////////////////////////////////////////////
+.brand-santajuana {
+    font-family: $josefin;
+    color: $azul;
+    letter-spacing: 0.25em;
+    font-size: 1.1em;
+}
+
+.rojo {
+    color: $rojo;
+    font-weight: bold;
+}
+
+.brand-social {
+    color: $verde;
+}
+
+.brand-background {
+    background-color: $blanco;
+}
+
+body {
+    background-color: $gris;
+    font-family: $open-sans;
+    font-size: 0.9em;
+}
+
+.container {
+    margin-top: 71px;
+}
+
+.left {
+    background-color: $blanco;
+    padding: 8px 4px 4px 4px;
+}
+
+.middle {
+    margin: 0px;
+    padding: 0px;
+}
+
+.right {
+    background-color: $blanco;
+    padding: 8px 4px 4px 4px;
+}
+
+
+
+.brandposfixer {
+    position: absolute;
+    top: 14px;
+    left: 60px;
+}
+
+.login {
+    color: $rojo;
+    position: absolute;
+    right: 15px;
+    top: 18px;
+}
+
+h3 {
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+a:link,
+a:visited,
+a:hover {
+    text-decoration: none;
+    color: $verde;
+}
+
+.list-group-item {
+    padding: 4px 6px 4px 6px;
+}
+
+/////////////////////////////////////////////// Animations ///////////////////////////////////////////////
+
+.wiggle:hover {
+    animation: wiggle ease .3s;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: scaleX(1.00) scaleY(1.00);
+    }
+
+    25% {
+        transform: scaleX(1.1) scaleY(1.1);
+
+    }
+
+    50% {
+        transform: scaleX(0.9) scaleY(0.9);
+    }
+
+    75% {
+        transform: scaleX(1.1) scaleY(1.1);
+
+    }
+
+    100% {
+        transform: scaleX(1.00) scaleY(1.00);
+    }
+}
+
+
+.glow:hover {
+    span {
+        box-shadow: 0 0 4px 2px rgba(#fff, .75);
+    }
+}
+
+/////////////////////////////////////////////// Circles and colors ///////////////////////////////////////////////
+
+.circle-box {
+    position: absolute;
+    width: 1.5%;
+
+    span {
+        border-radius: 50%;
+        position: absolute;
+        width: 100%;
+        padding: 100%;
+        box-shadow: none;
+        transition: box-shadow .25s ease;
+    }
+}
+
+$cgris: rgba(128, 128, 128, 0.5);
+$cverde: rgba(0, 255, 0, 0.5);
+$camarillo: rgba(128, 128, 0, 0.5);
+$crojo: rgba(255, 0, 0, 0.5);
+
+$cbgris: rgba(64, 64, 64, 1);
+$cbverde: rgba(0, 128, 0, 1);
+$cbamarillo: rgba(64, 64, 0, 1);
+$cbrojo: rgba(128, 0, 0, 1);
+
+.circle-grey {
+    span {
+        background-color: $cgris;
+        border: 1px solid $cbgris;
+    }
+}
+
+.circle-green {
+    span {
+        background-color: $cverde;
+        border: 1px solid $cbverde;
+    }
+}
+
+.circle-yellow {
+    span {
+        background-color: $camarillo;
+        border: 1px solid $cbamarillo;
+    }
+}
+
+.circle-red {
+    span {
+        background-color: $crojo;
+        border: 1px solid $cbrojo;
+    }
+}
+
+.circle-l001 {
+    top: 1.75%;
+    left: 2%;
+}
+
+/////////////////////////////////////////////// Overrides ///////////////////////////////////////////////
+
+.btn.focus,
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.fa-plus-square {
+    color: $verde;
+    margin-left: 6px;
+}
