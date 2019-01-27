@@ -19,39 +19,71 @@
 <body>
     <nav class="navbar fixed-top brand-background p-2 shadow">
         <a class="navbar-brand mb-0 p-0" href="#"><img src="img/logo.png" height="40" width="40" alt="Logo image">
-			<span class="brandposfixer"><span class="brand-santajuana">SANTA JUANA</span><span class="rojo">. </span><span class="brand-social">Social</span></span>
-			<i class="fa fa-user-circle fa-lg wiggle login"></i>
-		</a>
+            <span class="brandposfixer align-middle">
+                <span class="brand-santajuana">SANTA JUANA</span>
+                <span class="rojo">.</span>
+                <span class="brand-social">&nbsp;Social</span>
+            </span>
+        </a>
+        <i class="fa fa-user-circle wiggle login text-right"></i>
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-lg-2 col-6 left">
+            <div class="col-lg-2 col-6 left rounded-left">
+                <!-- LEFT COLUMN-->
+                <!-- General Events list -->
                 <h3>General Events</h3>
-                <ul class="list-group lista">
-                    <li class="list-group-item list-group-item-action" id="gEvent001">Halloween</li>
-                    <li class="list-group-item list-group-item-action" id="gEvent002">Easter</li>
-                    <li class="list-group-item list-group-item-action" id="gEvent003">Summer Fest</li>
+                <ul class="list-group">
+                    <!-- All data- is hardcoded on the li of each event, later in the courses when I learn backend it will be on database -->
+                    <li class="list-group-item list-group-item-action" id="gEvent001" data-invited='["001","002","003","004","005"]' data-confirmed='["003","004","005"]' data-notgoing='["002"]'>Halloween</li>
+                    <li class="list-group-item list-group-item-action" id="gEvent002" data-invited='["001","002","003","004","005"]' data-confirmed='["002","003","004","005"]' data-notgoing='["001"]'>Easter</li>
+                    <li class="list-group-item list-group-item-action" id="gEvent003" data-invited='["001","002","003","004","005"]' data-confirmed='["001","002"]' data-notgoing='["003"]'>Summer Fest</li>
                 </ul>
-                <a href="#" class=""><i class="fa fa-plus-square">&nbsp;</i>New</a>
-                </a>
+                <a href="#"><i class="fa fa-plus-square">&nbsp;</i>New</a>
+                <!-- Collapsable form for General Events -->
+                <form>
+                    <div class="form-group">
+                        <input type="text" id="inputGeneralEventName" class="form-control-sm" value="" placeholder="nombre del evento">
+                    </div>
+                </form>
                 <hr>
+                <!-- Personal events list -->
                 <h3>Personal Events</h3>
-                <ul class="list-group lista">
-                    <li class="list-group-item list-group-item-action" id="pEvent001">Birthday</li>
-                    <li class="list-group-item list-group-item-action" id="pEvent002">BBQ</li>
-                    <li class="list-group-item list-group-item-action" id="pEvent003">Soccer Match</li>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-action" id="pEvent001" data-invited='["001","002","003"]' data-confirmed='["001","002"]' data-notgoing='["003"]' data-notinvited="">Birthday</li>
+                    <li class="list-group-item list-group-item-action" id="pEvent002" data-invited='["002","003","004","005"]' data-confirmed='["002","003","005"]' data-notgoing='[""]'>BBQ</li>
+                    <li class="list-group-item list-group-item-action" id="pEvent003" data-invited='["001","005"]' data-confirmed='["001"]' data-notgoing='[""]'>Soccer Match</li>
                 </ul>
                 <a href="#" class=""><i class="fa fa-plus-square">&nbsp;</i>New</a>
-                </a> </div>
+            </div>
+            <!-- MIDDLE SECTION -->
             <div class="col-lg-8 middle col-sm-12 order-1 order-lg-0">
+                <!-- The map! -->
                 <img class="img-fluid" src="img/mapa.png" height="659" width="800" alt="mapa">
-                <span class="circle-box circle-l001 circle-yellow glow" id="circle-l1001">
-  					<span>
-  					</span>
+                <!-- Responsive css circular indicators of each house. I only included 5 of them just enough to show functionality. ALL 200+ houses will have it's own circle in final version. I intend to make a function to create them dinamically from information on database, not hardcoded here in the HTML one by one-->
+                <!-- data-lote="nnn" is also hardcoded for now -->
+                <span class="circle-box circle-l001 circle-grey glow glowing">
+                    <span data-lote="001"></span>
+                </span>
+                <span class="circle-box circle-l002 circle-grey glow glowing">
+                    <span data-lote="002"></span>
+                </span>
+                <span class="circle-box circle-l003 circle-grey glow glowing">
+                    <span data-lote="003"></span>
+                </span>
+                <span class="circle-box circle-l004 circle-grey glow glowing">
+                    <span data-lote="004"></span>
+                </span>
+                <span class="circle-box circle-l005 circle-grey glow glowing">
+                    <span data-lote="005"></span>
                 </span>
             </div>
-            <div class="col-lg-2 col-6 right">
+            <!-- RIGHT COLUMN -->
+            <!-- Dynamic Information panel -->
+            <div class="col-lg-2 col-6 right rounded-right">
                 <h3 class="text-center font-weight-bold">Information</h3>
+                <div id="infopanel">
+                </div>
             </div>
         </div>
     </div>
