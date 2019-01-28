@@ -16,9 +16,10 @@ $('.circle-box span').on('click', function() {
 	var lote = $(this).data("lote");
 	$(this).popover({
 		title: "Lote " + lote,
+		html: true,
 		animation: true,
 		trigger: "focus",
-		content: "placeholder, later I'll just populate this with database query of house number " + lote,
+		content: $(".popoverTemplate").html(),
 		placement: "auto",
 	}).popover('show');
 });

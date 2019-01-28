@@ -103,11 +103,16 @@ h3 {
     visibility: hidden;
 }
 
-#infopanel {
+#infopanel,
+.popoverTemplate {
     border: 1px solid rgba(0, 0, 0, 0.125);
     padding: 4px 6px 4px 6px;
     border-radius: 0.25rem;
     visibility: hidden;
+}
+
+.popoverTemplate div button {
+    width: 30px;
 }
 
 /////////////////////////////////////////////// Animations ///////////////////////////////////////////////
@@ -294,7 +299,15 @@ textarea {
 .btn:hover {
     outline: none;
     color: $blanco;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
 }
+
+.btn:focus {
+    outline: none;
+    color: $blanco;
+    box-shadow: none;
+}
+
 
 .modal {
     top: 50%;

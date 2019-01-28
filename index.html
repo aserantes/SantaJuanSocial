@@ -45,8 +45,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm bgris shadow-none mr-auto" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-sm bazul shadow-none">Save</button>
+                    <button type="button" class="btn btn-sm bgris mr-auto" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm bazul">Save</button>
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@
                     </li>
                 </ul>
                 <!-- Button trigger modal for Events-->
-                <button type="button" class="mt-1 btn btn-sm bverde shadow-none" data-toggle="modal" data-target="#formEvent">
+                <button type="button" class="mt-1 btn btn-sm bverde" data-toggle="modal" data-target="#formEvent">
                     <i class="fa fa-plus"></i>
                 </button>
             </div>
@@ -132,17 +132,23 @@
                 <h3 class="text-center font-weight-bold">Information</h3>
                 <div id="infopanel"></div>
                 <div class="w-100 justify-content-around" id="buttonpad">
-                    <button type="button" class="mt-1 btn btn-sm bamarillo shadow-none">
+                    <button type="button" class="mt-1 btn btn-sm bamarillo">
                         <i class="fa fa-pencil"></i>
                     </button>
                     <i class="fa fa-cross"></i>
-                    <button type="button" class="mt-1 btn btn-sm brojo shadow-none float-right">
+                    <button type="button" class="mt-1 btn btn-sm brojo float-right">
                         <i class="fa fa-times"></i>
                     </button>
                 </div>
             </div>
         </div>
     </div>
+    <span class="hidden popoverTemplate">
+        <div class="btn-group w-100" role="group" aria-label="popover template">
+            <button type="button" class="btn btn-sm bverde">Yes</button>
+            <button type="button" class="btn btn-sm brojo">No</button>
+        </div>
+    </span>
     <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
