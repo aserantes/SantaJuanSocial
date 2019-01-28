@@ -12,7 +12,29 @@ $verde: #20872C;
 $blanco: #FFF;
 $gris: #D2CBCB;
 $rojo: #DB5461;
+$amarillo: #FFBF3F;
 $radio: width / 20;
+
+.bverde {
+    background-color: $verde;
+}
+
+.bazul {
+    background-color: $azul;
+}
+
+.bgris {
+    background-color: $gris;
+}
+
+.brojo {
+    background-color: $rojo;
+}
+
+.bamarillo {
+    background-color: $amarillo;
+}
+
 
 /////////////////////////////////////////////// Rules ///////////////////////////////////////////////
 .brand-santajuana {
@@ -38,7 +60,7 @@ $radio: width / 20;
 body {
     background-color: $gris;
     font-family: $open-sans;
-    font-size: 0.9em;
+    font-size: 0.9rem;
 }
 
 .container {
@@ -60,15 +82,6 @@ body {
     padding: 8px 4px 4px 4px;
 }
 
-// .brandposfixer {
-//     vertical-align: middle;
-// }
-
-.login {
-    color: $rojo;
-    font-size: 1.5rem;
-}
-
 h3 {
     font-size: 1em;
     width: 100%;
@@ -76,58 +89,31 @@ h3 {
     font-weight: bold;
 }
 
-a:link,
-a:visited,
-a:hover {
-    text-decoration: none;
-    color: $verde;
-}
-
 .list-group-item {
     padding: 4px 6px 4px 6px;
 }
 
 .navbar-brand img {
-        height: 40px;
-        width: 40px;
-        margin-right: 8px;
-    }
+    height: 40px;
+    width: 40px;
+    margin-right: 8px;
+}
+
+#buttonpad {
+    visibility: hidden;
+}
+
+#infopanel {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 4px 6px 4px 6px;
+    border-radius: 0.25rem;
+    visibility: hidden;
+}
 
 /////////////////////////////////////////////// Animations ///////////////////////////////////////////////
 
-.wiggle:hover {
-    animation: wiggle ease .3s;
-    animation-iteration-count: 1;
-    transform-origin: 50% 50%;
-}
-
-@keyframes wiggle {
-    0% {
-        transform: scaleX(1.00) scaleY(1.00);
-    }
-
-    25% {
-        transform: scaleX(1.1) scaleY(1.1);
-
-    }
-
-    50% {
-        transform: scaleX(0.9) scaleY(0.9);
-    }
-
-    75% {
-        transform: scaleX(1.1) scaleY(1.1);
-
-    }
-
-    100% {
-        transform: scaleX(1.00) scaleY(1.00);
-    }
-}
-
-
-.glow:hover {
-    span {
+.glow {
+    span:hover {
         box-shadow: 0 0 4px 4px rgba(#fff, 1);
     }
 }
@@ -236,10 +222,6 @@ $crojo: rgba(255, 0, 0, 0.5);
 //     box-shadow: none !important;
 // }
 
-.fa-plus-square {
-    color: $verde;
-    margin-left: 6px;
-}
 
 .navbar-brand {
     font-size: 1.25rem;
@@ -273,4 +255,51 @@ li.list-group-item {
         width: 30px;
         margin-right: 4px;
     }
+}
+
+input,
+textarea::placeholder {
+    opacity: 0.8;
+    font-family: $open-sans;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu {
+    font-size: 0.9rem; //This is for tempusdominus datepicker
+}
+
+.form-control-sm:focus {
+    background-color: #FFFFEE;
+    box-shadow: none;
+    outline: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.form-control-sm {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    width: 100%;
+    font-family: $open-sans;
+    font-size: 0.9rem;
+}
+
+textarea {
+    min-height: 10rem;
+}
+
+.btn {
+    outline: none;
+    color: $blanco;
+}
+
+.btn:hover {
+    outline: none;
+    color: $blanco;
+    font-weight: bold;
+}
+
+.modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+      
 }
