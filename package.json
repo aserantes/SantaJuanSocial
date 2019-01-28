@@ -14,9 +14,10 @@
     "watch:all": "npm-run-all --parallel watch:scss bs",
     "clean": "rimraf dist && mkdirp dist/fonts && mkdirp dist/js && mkdirp dist/img && mkdirp dist/css",
     "copyfonts": "mkdirp dist/fonts && ncp node_modules/font-awesome/fonts dist/fonts && ncp fonts dist/fonts",
+    "copyfavicon": "ncp favicon.ico dist",
     "imgmin": "imagemin img/* --out-dir dist/img",
     "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html",
-    "build": "npm run clean && npm run imgmin && npm run copyfonts && npm run usemin"
+    "build": "npm run clean && npm run imgmin && npm run copyfonts && npm run usemin && npm run copyfavicon"
   },
   "repository": {
     "type": "git",
