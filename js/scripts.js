@@ -3,7 +3,7 @@ $(function() {
 	$('[data-toggle="popover"]').popover()
 })
 
-// // dispose of popovers on clicking anything other than a popover
+// // dispose of popovers on clicking anything other than a popover. May change this later...
 $('html').on('click', function(e) {
 	if (typeof $(e.target).data('original-title') == 'undefined') { $('[data-original-title]').popover('dispose'); }
 });
@@ -11,7 +11,8 @@ $('html').on('click', function(e) {
 
 
 
-// on click event for all spans childs of class "circle-box" (the colored circles on map), a popover is dinamically created
+// on click event for all spans childs of class "circle-box" (the colored circles on map),
+// a popover is dinamically created based on the same template in the HTML with class .popoverTemplate
 $('.circle-box span').on('click', function() {
 	var lote = $(this).data("lote");
 	$(this).popover({
@@ -29,8 +30,10 @@ $('.circle-box span').on('click', function() {
 
 var activeLi //this is just a global variable to know the active Event at any moment
 
-$(".left ul li").click(function() { //on click over any event...
-	if (activeLi !== undefined) { activeLi.removeClass('active'); } //remove active class of previous event (if any)
+//on click over any event...
+$(".left ul li").click(function() {
+	//remove active class of previous event (if any)
+	if (activeLi !== undefined) { activeLi.removeClass('active'); } 
 	$(this).addClass('active'); //adds active class to clicked event
 	activeLi = $(this); //sets the new activeLi in global variable activeLi
 	$(".circle-box").removeClass("circle-grey circle-green circle-yellow circle-red"); //remove all circle color classes
